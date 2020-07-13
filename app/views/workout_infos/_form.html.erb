@@ -1,0 +1,34 @@
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs-workout">
+  <%= form_with model: @workout_info do |form| %>
+  
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+  </div>
+  <div class="field">
+    <%= form.label :difficulty %>
+    <%= form.select :difficulty, @difficulty.map{|d| d }, class:"form-field" %>
+  </div>
+  <div class="field testing">
+    <%= form.label :muscle_groups_used %>
+    <%= form.select :muscle_groups, @muscle_groups.map{|m| m } %>
+  </div>
+  <div class="field">    
+    <%= form.label :workout_type %>
+    <%= form.select :workout_type, @workout_categories.map{|c| c } %>
+  </div>    
+  <div class="form-actions ">
+  <button type="button" class="btn btn-primary btn-lg"><input type="submit" name="commit" value="Create Workout" class="btn create-btn" data-disable-with="Create Workout info"><%#= form.button :submit %></button>
+  <button type="button" class="btn btn-primary btn-lg"><%= link_to 'Back', workout_infos_path %></button>
+  </div>
+<% end %>
+</div>
+
+
+
+
+
+

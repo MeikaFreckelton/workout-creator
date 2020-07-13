@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+
+ .show-table{
+    
+    width: 70vw;
+    .show-table-head{
+        background-color: black;
+        th{
+            padding: 1em;
+            border-bottom: 2px solid white;
+            color: white
+        }
+    }
+    .show-table-body{
+        .show-table-row{
+            td{
+                background-color: #e0e0e0;
+                margin: 50vw;
+                padding: 1em;
+                border-bottom: 2px solid white;
+
+            }
+            
+        }
+        
+    }
+}
+
+
+
+

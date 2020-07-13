@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Workouts</h1>
+
+<div class="card-rows">
+    <% @workout_infos.map do |workout| %>
+      <div class="card" style="width: 18rem;">
+        <p><%#= image_tag(workout.picture, class:"card-img-top") if workout.picture.attached? %></p>
+      
+      <div class="card-body">
+        <h5 class="card-title"><%= workout.name %></h5>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Difficulty: <%= workout.difficulty%></li>
+        <li class="list-group-item">Muscle groups: <%= workout.muscle_groups%></li>
+        <li class="list-group-item">Workout Type: <%= workout.workout_type%></li>
+      </ul>
+
+      <div class="card-body">
+        <%= link_to 'Show', workout %>
+        <%= link_to 'Edit', edit_exercise_gallery_path(workout) %>
+        <%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-table">
+  <thead>
+    <tr class="show-table-head">
+      <th>Name</th>
+      <th>Difficulty</th>
+      <th>Muscle groups</th>
+      <th>Workout type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="show-table-body">
+    <% @workout_infos.each do |workout_info| %>
+      <tr class="show-table-row">
+        <td><%= workout_info.name %></td>
+        <td><%= workout_info.difficulty %></td>
+        <td><%= workout_info.muscle_groups %></td>
+        <td><%= workout_info.workout_type %></td>
+        <td><%= link_to 'Show', workout_info %></td>
+        <td><%= link_to 'Edit', edit_workout_info_path(workout_info) %></td>
+        <td><%= link_to 'Destroy', workout_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type="button" class="btn btn-primary btn-lg"><%= link_to 'Create new workout', new_workout_info_path %></button>

@@ -1,0 +1,28 @@
+// Place all the styles related to the UserInfos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+table{
+    width:90vw;
+}
+.show-users-head{
+    background-color: black;
+    th{
+        padding: 1em;
+        border-bottom: 2px solid white;
+        color: white
+    }
+}
+.show-users-body{
+    .users-table{
+        td{
+            background-color: #e0e0e0;
+            margin: 50vw;
+            padding: 1em;
+            border-bottom: 2px solid white;
+
+        }
+        
+    }
+    
+}

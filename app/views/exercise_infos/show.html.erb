@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise_info.name %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @exercise_info.reps %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @exercise_info.time %>
+</p>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @exercise_info.sets %>
+</p>
+
+<p>
+  <strong>Weight needed:</strong>
+  <%= @exercise_info.weight_needed %>
+</p>
+
+<p>
+  <strong>Equipment needed:</strong>
+  <%= @exercise_info.equipment_needed %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @exercise_info.user_id %>
+</p>
+
+<p>
+  <strong>Workout info:</strong>
+  <%= @exercise_info.workout_info_id %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_info_path(@exercise_info) %> |
+<%= link_to 'Back', exercise_infos_path %>

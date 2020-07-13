@@ -1,0 +1,32 @@
+<% @muscle_groups = ["full body", "legs", "core", "arms", "back"]%>
+<%= form_with model: @exercise_gallery do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="exercise-form">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="exercise-form">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div class="exercise-form">
+      <%= f.label :muscle_groups %>
+      <%= f.select :muscle_groups, @muscle_groups.map{|m| m } %>
+    </div>
+    <div class="exercise-form">
+      <%=f.label :picture %>
+      <%= f.file_field :picture %>
+    </div>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+<%#! update forms !!! %>

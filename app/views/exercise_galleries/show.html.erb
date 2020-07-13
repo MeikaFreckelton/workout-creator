@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<td><%= image_tag @exercise_gallery.picture if @exercise_gallery.picture.attached? %></td>
+<p>
+  <strong>Name:</strong>
+  <%= @exercise_gallery.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise_gallery.description %>
+</p>
+
+<p>
+  <strong>Muscle groups:</strong>
+  <%= @exercise_gallery.muscle_groups %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_gallery_path(@exercise_gallery) %> |
+<%= link_to 'Back', exercise_galleries_path %>

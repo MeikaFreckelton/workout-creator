@@ -1,0 +1,29 @@
+// Place all the styles related to the ExerciseGalleries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// new exericise gallery form :
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    // margin: 3% 0 ;
+}
+
+.card-rows{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    .card{
+        margin-bottom: 5%;
+
+    }
+}
+
+.exercise-form{
+    display: flex;
+    flex-direction: row;
+    padding: 1% 0;
+}
+
