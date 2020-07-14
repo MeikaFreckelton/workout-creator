@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+
+<%= image_tag @user_info.picture if @user_info.picture.attached? %>
+
 <p>
   <strong>User:</strong>
   <%= @user_info.user_id %>

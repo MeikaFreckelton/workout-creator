@@ -1,6 +1,7 @@
 class ExerciseGallery < ApplicationRecord
     validates :name, :picture, :muscle_groups, presence: true
     has_one_attached :picture
+    
 end
 
 # add validation

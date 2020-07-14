@@ -1,23 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Profile</h1>
+<%# <h1>Your Profile</h1> %>
 
 <div class="profile">
-  <h5>(insert profile image and profile image upload feature)</h5>
-
+  <%# <h5>(insert profile image and profile image upload feature)</h5> %>
+  
   <h5><%#=@current_user_info %></h5>
   <%#= @current_user_info%>
-  <h5>D.O.B.</h5>
+  <%# <h5>D.O.B.</h5>
   <h5>Gender</h5>
   <h5>Weight</h5>
-  <h5>Height</h5>
+  <h5>Height</h5> %>
 
 </div>
+<% @user_infos.each do |user_info| %>
+      
+      <div class="profile">
+          <h2><%= user_info.name %></h2>
+        </div>
+      <div class="users-table">
+        
+        <div class="profile profile-img">
+          <%= image_tag(user_info.picture, class:"profile-img") if user_info.picture.attached?%>
+        </div>
+        <div class="profile">
+          <h6>Your date of birth:</h6>
+          <h5><%= user_info.date_of_birth %></h5>
+        </div>
+        <%# <div class="profile">
+          <h3>Your gender:</h3>
+          <%= user_info.gender %>
+        <%# </div> %>
+        <div class="profile">
+          <h6>Your current weight (in kgs):</h6>
+          <h5><%= user_info.weight %></h5>
+        </div>
+        <div class="profile">
+          <h6>Your height:</h6>
+          <h5><%= user_info.height %></h5>
+        </div>
+        <%= link_to 'Show', user_info %>
+        <%= link_to 'Edit', edit_user_info_path(user_info) %>
+        <%# <div><%= link_to 'Destroy', user_info, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
 
 
 
-
-<table>
+<%# <table>
   <thead class="show-users-head">
     <tr>
       <th>Name</th>
@@ -30,21 +60,10 @@
   </thead>
 
   <tbody class="show-users-body">
-    <% @user_infos.each do |user_info| %>
-      <tr class="users-table">
-        <td><%= user_info.name %></td>
-        <td><%= user_info.date_of_birth %></td>
-        <td><%= user_info.gender %></td>
-        <td><%= user_info.weight %></td>
-        <td><%= user_info.height %></td>
-        <td><%= link_to 'Show', user_info %></td>
-        <td><%= link_to 'Edit', edit_user_info_path(user_info) %></td>
-        <%# <><%= link_to 'Destroy', user_info, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </tr>
-    <% end %>
+    
   </tbody>
 </table>
 
-<br>
+<br> %>
 
 <%#= link_to 'New User Info', new_user_info_path %>
