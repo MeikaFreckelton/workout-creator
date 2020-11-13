@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_034135) do
+ActiveRecord::Schema.define(version: 2020_11_13_025447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2020_07_13_034135) do
     t.integer "weight_needed"
     t.string "equipment_needed"
     t.bigint "user_id", null: false
-    t.bigint "workout_info_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "workout_infos_id", null: false
     t.index ["user_id"], name: "index_exercise_infos_on_user_id"
-    t.index ["workout_info_id"], name: "index_exercise_infos_on_workout_info_id"
+    t.index ["workout_infos_id"], name: "index_exercise_infos_on_workout_infos_id"
   end
 
   create_table "user_infos", force: :cascade do |t|
@@ -91,12 +91,15 @@ ActiveRecord::Schema.define(version: 2020_07_13_034135) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "exercise_infos_id"
+    t.index ["exercise_infos_id"], name: "index_workout_infos_on_exercise_infos_id"
     t.index ["user_id"], name: "index_workout_infos_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exercise_infos", "users"
-  add_foreign_key "exercise_infos", "workout_infos"
+  add_foreign_key "exercise_infos", "workout_infos", column: "workout_infos_id"
   add_foreign_key "user_infos", "users"
+  add_foreign_key "workout_infos", "exercise_infos", column: "exercise_infos_id"
   add_foreign_key "workout_infos", "users"
 end

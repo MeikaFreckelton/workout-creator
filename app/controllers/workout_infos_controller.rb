@@ -20,6 +20,7 @@ class WorkoutInfosController < ApplicationController
     # @workout_categories = ["strength or resistance training", "cardio", "HIIT", "other"]
     # @muscle_groups = ["full body", "legs", "core", "arms", "back"]
     @workout_info = WorkoutInfo.new
+    @exericse 
   end
 
   # GET /workout_infos/1/edit

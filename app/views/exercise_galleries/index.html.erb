@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your exercises</h1>
-
+<p><%= link_to "add new exercise", new_exercise_gallery_path %></p>
 <div class="card-rows">
     <% @exercise_galleries.map do |exercise_gallery| %>
       <div class="card" style="width: 18rem;">
@@ -23,6 +23,8 @@
     </div>
     <% end %>
 </div>
+
+
 
 
 

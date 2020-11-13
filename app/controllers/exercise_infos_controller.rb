@@ -1,6 +1,6 @@
 class ExerciseInfosController < ApplicationController
   before_action :set_exercise_info, only: [:show, :edit, :update, :destroy]
-  before_action :set_workout_info
+  # before_action :set_workout_info
 
   # GET /exercise_infos
   # GET /exercise_infos.json
@@ -76,9 +76,9 @@ class ExerciseInfosController < ApplicationController
       params.require(:exercise_info).permit(:name, :reps, :time, :sets, :weight_needed, :equipment_needed, :user_id, :workout_info_id)
     end
 
-    def set_workout_info
-      @workout_info_id = WorkoutInfo.find(params[:id])
-    end
+    # def set_workout_info
+    #   @workout_info_id = WorkoutInfo.find(params[:id])
+    # end
 end
 
 

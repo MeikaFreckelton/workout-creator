@@ -1,21 +1,16 @@
 <div class="jumbotron">
   <div class="row">
-    <div class="col-md-12">
-    <h1>Welcome to the Workout Creator</h1>
-    <p>Create and collect customized workouts</p>
-    <button type="button" class="btn btn-primary btn-lg"><%= link_to "Create A New Workout", new_workout_info_path %></button>
-    <button type="button" class="btn btn-secondary btn-lg"><%= link_to 'View Existing Workouts', workout_infos_path %></button>
-    <button type="button" class="btn btn-secondary btn-lg"><%= link_to 'View/Edit Profile', user_infos_path %></button>
-    <button type="button" class="btn btn-secondary btn-lg"><%= link_to "Add to exercise gallery", new_exercise_gallery_path %></button>
-    </div>
-    <div class="col-md-6">
-
+    <div class="col-md-12 ">
+      <h1>Welcome to the Workout Creator</h1>
+      <h6 class="sub-heading">Fill your exercise gallery and use them to create and collect customized workouts</h6>
+      <div class="btn-div">
+        <button type="button" class="home-btns"><%= link_to "Add to exercise gallery", new_exercise_gallery_path %></button>
+        <button type="button" class="home-btns"><%= link_to "View exercise gallery", exercise_galleries_path %></button>
+        <button type="button" class="home-btns"><%= link_to "Create A New Workout", new_workout_info_path %></button>
+        <button type="button" class="home-btns"><%= link_to 'View Existing Workouts', workout_infos_path %></button>
+        <button type="button" class="home-btns"><%= link_to 'View/Edit Profile', user_infos_path %></button>
+        
+      </div>
     </div>
   </div>
-  
-  <%# <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> %>
 </div>
